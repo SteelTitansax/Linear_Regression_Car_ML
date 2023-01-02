@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import copy
+import joblib
+
 import tensorflow as tf
 from sklearn.linear_model import  LinearRegression
 import matplotlib.pyplot as plt
@@ -50,3 +52,6 @@ LinearRegression()
 print("r linear regression  trained : ")
 print(temp_reg.score(X_test_temp, y_test_temp))
 
+# save the model to disk
+filename = 'finalized_model.sav'
+joblib.dump(temp_reg, filename)
